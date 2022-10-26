@@ -4,25 +4,26 @@ import React from "react";
 import { Text } from "../Text";
 import { ButtonGroup } from "../ButtonGroup/ButtonGroup";
 import { Button } from "../Button";
+import ButtonStories from "../Button/Button.stories";
 
 type ModalProps = {
+  buttons?: ReactNode;
   content: ReactNode;
+  isOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
   size: "sm" | "md" | "lg" | "xl";
   subtitle?: string;
   title: string;
 };
 
-export const Modal = ({ content, title, subtitle }: ModalProps) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  React.useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsOpen(true);
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
+export const Modal = ({
+  content,
+  title,
+  subtitle,
+  isOpen,
+  setIsOpen,
+  buttons,
+}: ModalProps) => {
   return (
     <Dialog
       onClose={() => setIsOpen(false)}
@@ -37,10 +38,9 @@ export const Modal = ({ content, title, subtitle }: ModalProps) => {
 
           {content}
 
-          <ButtonGroup className="justify-end">
-            <Button color="transparent">Cancel</Button>
-            <Button color="primary">Submit</Button>
-          </ButtonGroup>
+          {buttons && (
+            <ButtonGroup className="justify-end">{buttons}</ButtonGroup>
+          )}
         </Dialog.Panel>
       </div>
     </Dialog>
