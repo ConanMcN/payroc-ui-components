@@ -1,7 +1,9 @@
 import "./App.css";
 import { Button } from "./components/Button";
 import { ButtonGroup } from "./components/ButtonGroup/ButtonGroup";
+import { Modal } from "./components/Modal";
 import { Tabs } from "./components/Tabs";
+import { Text } from "./components/Text";
 
 function App() {
   return (
@@ -10,6 +12,7 @@ function App() {
 
       <ButtonGroup>
         <Button color="primary">Submit</Button>
+        <Button color="secondary">Submit</Button>
         <Button color="transparent">Close</Button>
       </ButtonGroup>
 
@@ -30,6 +33,32 @@ function App() {
           },
         ]}
       />
+
+      <Modal
+        size="md"
+        content={
+          <Text>
+            Velit aliquip adipisicing excepteur quis. Dolore duis sunt est
+            proident. Voluptate laboris deserunt deserunt mollit mollit
+            voluptate ea do qui nisi. Adipisicing cillum est eu dolor consequat
+            elit incididunt cupidatat tempor.
+          </Text>
+        }
+        title="Sign up"
+      />
+
+      <Text variant="h1">H1</Text>
+      <Text variant="h2">H2</Text>
+      <Text variant="h3">H3</Text>
+      <Text variant="h4">H4</Text>
+      <Text variant="h5">H5</Text>
+      <Text variant="subtitle">Subtitle</Text>
+      <Text>
+        Velit aliquip adipisicing excepteur quis. Dolore duis sunt est proident.
+        Voluptate laboris deserunt deserunt mollit mollit voluptate ea do qui
+        nisi. Adipisicing cillum est eu dolor consequat elit incididunt
+        cupidatat tempor.
+      </Text>
     </div>
   );
 }

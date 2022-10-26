@@ -4,6 +4,11 @@ type ButtonColors = "primary" | "secondary" | "transparent";
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   children: ReactNode | undefined;
+  /**
+   * - primary = orange
+   * - secondary = dark navy
+   * - transparent = primary outline
+   */
   color: ButtonColors;
 };
 
@@ -13,9 +18,12 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
  * of classNames manually
  */
 const ButtonVariants: Record<ButtonColors, string> = {
-  primary: "bg-primary border-primary text-white hover:bg-primaryDark",
-  secondary: "bg-secondary border-secondary text-white hover:bg-secondaryDark",
-  transparent: "bg-transparent border-primary text-primary",
+  primary:
+    "outline-0 bg-primary border-primary text-white hover:bg-primaryDark focus:shadow-button",
+  secondary:
+    "outline-0 bg-secondary border-secondary text-white hover:bg-secondaryDark focus:shadow-buttonSecondary",
+  transparent:
+    "outline-0 bg-transparent border-primary text-primary focus:shadow-button",
 };
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
