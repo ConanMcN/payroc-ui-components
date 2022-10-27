@@ -1,10 +1,7 @@
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
 import { Dialog } from "@headlessui/react";
-import React from "react";
 import { Text } from "../Text";
 import { ButtonGroup } from "../ButtonGroup/ButtonGroup";
-import { Button } from "../Button";
-import ButtonStories from "../Button/Button.stories";
 
 type ModalProps = {
   buttons?: ReactNode;

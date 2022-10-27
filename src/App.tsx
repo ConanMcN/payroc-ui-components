@@ -1,7 +1,6 @@
 import "./App.css";
 import { Button } from "./components/Button";
 import { ButtonGroup } from "./components/ButtonGroup/ButtonGroup";
-import { Modal } from "./components/Modal";
 import { Tabs } from "./components/Tabs";
 import { Text } from "./components/Text";
 
@@ -32,19 +31,6 @@ function App() {
             disabled: true,
           },
         ]}
-      />
-
-      <Modal
-        size="md"
-        content={
-          <Text>
-            Velit aliquip adipisicing excepteur quis. Dolore duis sunt est
-            proident. Voluptate laboris deserunt deserunt mollit mollit
-            voluptate ea do qui nisi. Adipisicing cillum est eu dolor consequat
-            elit incididunt cupidatat tempor.
-          </Text>
-        }
-        title="Sign up"
       />
 
       <Text variant="h1">H1</Text>
