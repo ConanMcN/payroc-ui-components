@@ -5,7 +5,7 @@ import { Button } from "../Button";
 import { ButtonGroup } from "./ButtonGroup";
 
 export default {
-  title: "Example/ButtonGroup",
+  title: "Components/ButtonGroup",
   component: ButtonGroup,
   argTypes: {
     className: {

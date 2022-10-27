@@ -6,16 +6,8 @@ import { Text } from "../Text";
 import { Button } from "../Button";
 
 export default {
-  title: "Example/Modal",
+  title: "Components/Modal",
   component: Modal,
-  argTypes: {
-    title: {
-      control: {
-        type: "text",
-        value: "Test",
-      },
-    },
-  },
 } as ComponentMeta<typeof Modal>;
 
 const Template: ComponentStory<typeof Modal> = (args) => {
@@ -31,12 +23,6 @@ const Template: ComponentStory<typeof Modal> = (args) => {
         {...args}
         isOpen={isOpen}
         setIsOpen={setIsOpen}
-        title="Test"
-        content={
-          <Text variant="paragraph">
-            Officia ea tempor in adipisicing cillum.
-          </Text>
-        }
         buttons={
           <>
             <Button color="transparent" onClick={() => setIsOpen(false)}>
@@ -53,3 +39,9 @@ const Template: ComponentStory<typeof Modal> = (args) => {
 };
 
 export const Default = Template.bind({});
+Default.args = {
+  content: (
+    <Text variant="paragraph">Officia ea tempor in adipisicing cillum.</Text>
+  ),
+  title: "Example Modal",
+};
